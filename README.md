@@ -1,6 +1,6 @@
 # Hi, I'm Vihanga Silva! 👋
 
-I am a passionate M.Tech CS student at IIT Kharagpur, driven by a curiosity for technology and a love for writing. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
+I am a passionate B.Tech Software Technology student at UOVT Sri Lanka, driven by a curiosity for technology and a love for writing. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
 
 ![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api?username=iamVihanga&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 
@@ -10,7 +10,7 @@ I am a passionate M.Tech CS student at IIT Kharagpur, driven by a curiosity for 
 - 📝 I write in-depth, long-form articles on my website [vihangasilva.me](https://vihangasilva.me/blog),
 
 ## Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,ts,nodejs,react,nextjs,mongodb,aws,bun,cs,cpp,dotnet,elysia,github,graphql,php)](https://skillicons.dev)
 
 ## 🌱 Currently Exploring
 
