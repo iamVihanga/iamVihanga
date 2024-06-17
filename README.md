@@ -4,6 +4,8 @@ I am a passionate B.Tech Software Technology student at UOVT Sri Lanka, driven b
 
 ![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api?username=iamVihanga&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 
+[![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api/top-langs?username=iamVihanga&hide=html,css&theme=vue-dark&show_icons=true)]
+
 ## 🚀 About Me
 
 - 🔭 I'm currently pursuing my Bachelor's Degree in Software Technology at University of Vocational Technology.
