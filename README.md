@@ -2,9 +2,7 @@
 
 I am a passionate B.Tech Software Technology student at UOVT Sri Lanka, driven by a curiosity for technology and a love for writing. My journey involves delving into the world of computer science, exploring new ideas, and sharing my insights with the community.
 
-![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api?username=iamVihanga&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
-
-[![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api/top-langs?username=iamVihanga&hide=html,css&theme=vue-dark&show_icons=true)]
+![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api?username=iamVihanga&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)  
 
 ## 🚀 About Me
 
@@ -13,6 +11,8 @@ I am a passionate B.Tech Software Technology student at UOVT Sri Lanka, driven b
 
 ## Tech Stack
 [![My Skills](https://skillicons.dev/icons?i=js,ts,nodejs,react,nextjs,mongodb,aws,bun,cs,cpp,dotnet,elysia,github,graphql,php)](https://skillicons.dev)
+
+![<iamVihanga>'s Stats](https://github-readme-stats.vercel.app/api/top-langs?username=iamVihanga&hide=html,css&theme=vue-dark&show_icons=true)
 
 ## 🌱 Currently Exploring
 
