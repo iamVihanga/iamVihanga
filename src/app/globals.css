@@ -71,3 +71,9 @@ h6 {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .standard-container {
+    @apply sm:px-28 px-4;
+  }
+}

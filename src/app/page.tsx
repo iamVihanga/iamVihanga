@@ -2,10 +2,11 @@ import { Spotlight } from '@/components/aceternity/Spotlight'
 import { FlipWords } from '@/components/aceternity/flip-words';
 import { HoverBorderGradient } from '@/components/aceternity/hover-border-gradient'
 import { Button } from '@/components/ui/button';
-import { ArrowDownToDot } from 'lucide-react';
+import { ArrowDownToDot, MailIcon, PhoneIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image'
 import ProfilePic from '../../public/images/profile.png'
+import AboutUsSection from '@/components/PageSections/Homepage/AboutUs'
 
 export default function Home() {
   return (
@@ -62,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* Section 02 - About */}
-      <div className="h-screen"></div>
+      <AboutUsSection />
     </div>
   );
 }
