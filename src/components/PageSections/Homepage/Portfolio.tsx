@@ -9,17 +9,22 @@ type Props = {}
 
 export default function Portfolio({ }: Props) {
   return (
-    <div id='portfolio' className="h-[205vh] w-full bg-neutral-100/50  dark:bg-neutral-950/30 relative antialiased">
+    <div id='portfolio' className="h-[205vh] w-full bg-neutral-100/50  dark:bg-neutral-950/30 relative antialiased overflow-hidden">
       <div className="standard-container py-20 z-10 w-full min-h-[160vh] absolute">
         {/* Header */}
-        <div className="flex items-center justify-between">
-          <h1 className='text-6xl uppercase font-black text-neutral-800 dark:text-white'>
+        <div className="flex items-start sm:items-center justify-between flex-col sm:flex-row">
+          <h1 className='hidden sm:flex text-6xl uppercase font-black text-neutral-800 dark:text-white'>
             <span>{`HERE’S A GLIMPSE OF`}</span><br />
             <span>{`SOME EXCITING PROJECTS`}</span><br />
             <span>{`I’VE DONE`}</span><br />
           </h1>
+          <h1 className='block sm:hidden text-2xl uppercase font-black text-neutral-800 dark:text-white'>
+            <span>{`HERE’S A GLIMPSE OF `}</span>
+            <span>{`SOME EXCITING PROJECTS`}</span><br />
+            <span>{`I’VE DONE`}</span><br />
+          </h1>
 
-          <Button variant={'solid'} size={'solid'} className='bg-black flex items-center gap-x-3 dark:bg-white h-14 text-white dark:text-black'>
+          <Button variant={'solid'} size={'solid'} className='bg-black mt-6 sm:mt-0 flex items-center gap-x-3 dark:bg-white h-14 text-white dark:text-black'>
             <p>See all projects</p>
             <ArrowUpRight size={20} />
           </Button>
