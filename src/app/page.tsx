@@ -7,10 +7,11 @@ import Link from 'next/link';
 import Image from 'next/image'
 import ProfilePic from '../../public/images/profile.png'
 import AboutUsSection from '@/components/PageSections/Homepage/AboutUs'
+import PortfolioSection from '@/components/PageSections/Homepage/Portfolio'
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="" id='home'>
       {/* Section 01 - Hero */}
       <div className="sm:h-screen h-[80vh] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative flex items-center justify-center pt-14 sm:px-28 px-4 gap-12">
         {/* Radial gradient for the container to give a faded look */}
@@ -64,6 +65,9 @@ export default function Home() {
 
       {/* Section 02 - About */}
       <AboutUsSection />
+
+      {/* Section 03 - Portfolio */}
+      <PortfolioSection />
     </div>
   );
 }

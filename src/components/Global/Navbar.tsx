@@ -23,7 +23,7 @@ export default function Navbar({ className }: Props) {
     <header className={`w-full h-14 px-0 sm:px-28 flex flex-row justify-between bg-white/80 dark:bg-black/80 border-b border-b-black dark:border-b-white/70 backdrop-blur-md ${className}`}>
       <div className="hidden sm:flex flex-row flex-1">
         {NavLinks.map(({ id, slug, text }) => (
-          <Button asChild className='text-black dark:text-white/70 dark:hover:text-white' size={'solid'} variant={'solid'}>
+          <Button key={id} asChild className='text-black dark:text-white/70 dark:hover:text-white' size={'solid'} variant={'solid'}>
             <Link href={slug}>{text}</Link>
           </Button>
         ))}

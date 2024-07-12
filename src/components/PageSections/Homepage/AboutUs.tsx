@@ -10,7 +10,7 @@ type Props = {}
 
 export default function AboutUs({ }: Props) {
   return (
-    <div className="sm:h-[80vh] h-fit py-5 sm:py-0">
+    <div id='about' className="sm:h-fit h-fit py-5 sm:py-20">
       <div className="w-full sm:py-8 py-1 standard-container grid sm:grid-cols-5 grid-cols-1 ">
         <div className="w-full border-0 sm:border-r border-black dark:border-white/20 col-span-3 pr-8">
           <h1 className='text-5xl sm:text-8xl text-center sm:text-left uppercase font-bold text-neutral-600'><span className='font-black text-black dark:text-white'>Who</span> am I</h1>
