@@ -1,5 +1,7 @@
+'use client';
+
 import { NavLinks } from '@/lib/constants'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ModeToggle } from './ThemeToggleButton'
@@ -62,23 +64,31 @@ export default function Navbar({ className }: Props) {
 }
 
 function MobileNavDrawer({ TriggerComponent }: { TriggerComponent: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
-    <Sheet>
+    <Sheet onOpenChange={(open) => setIsOpen(open)} open={isOpen}>
       <SheetTrigger asChild>
         {TriggerComponent}
       </SheetTrigger>
       <SheetContent side={'left'}>
-        <SheetHeader>
+        <SheetHeader className='flex items-start'>
           <SheetTitle>Navigate my Portfolio</SheetTitle>
         </SheetHeader>
 
-        <div>
-          some text
+        <div className='my-8 flex flex-col gap-y-3'>
+          {NavLinks.map(({ id, slug, text }) => (
+            <Button onClick={() => isOpen ? setIsOpen(false) : setIsOpen(true)} key={id} asChild className='text-black dark:text-white/70 dark:hover:text-white py-4 flex justify-start border-b' size={'solid'} variant={'solid'}>
+              <Link href={slug}>{text}</Link>
+            </Button>
+          ))}
         </div>
 
-        <SheetFooter>
-          This is footer
-        </SheetFooter>
+        {/* <SheetFooter>
+          <Button>
+
+          </Button>
+        </SheetFooter> */}
       </SheetContent>
     </Sheet>
   )
