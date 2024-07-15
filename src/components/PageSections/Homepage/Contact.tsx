@@ -32,7 +32,7 @@ export default function ContactSection({ }: Props) {
             <div className="relative h-12 mt-6 ">
               <div className="absolute flex items-center flex-wrap gap-3 z-10">
                 {SocialsList.map(social => (
-                  <Button asChild size={'icon'} variant={'outline'} className='group cursor-pointer border-transparent bg-pink-900/60 hover:bg-pink-900 w-12 h-12 text-pink-200 group-hover:text-pink-50'>
+                  <Button key={social.id} asChild size={'icon'} variant={'outline'} className='group cursor-pointer border-transparent bg-pink-900/60 hover:bg-pink-900 w-12 h-12 text-pink-200 group-hover:text-pink-50'>
                     <Link href={social.link} target='_blank'>
                       <social.icon size={23} />
                     </Link>

@@ -1,17 +1,17 @@
 import React from 'react'
 import { StaticImageData } from 'next/image'
-import BackendLight from '../../public/images/icons/BackEnd-Light.png'
-import BackendDark from '../../public/images/icons/BackEnd-Dark.png'
-import FrontendLight from '../../public/images/icons/FrontEnd-Dark.png'
-import FrontendDark from '../../public/images/icons/FrontEnd-Light.png'
-import databaseLight from '../../public/images/icons/databaseManagement-Light.png'
-import databaseDark from '../../public/images/icons/databaseManagementDark.png'
-import versionControlDark from '../../public/images/icons/versionControlDark.png'
-import versionControlLight from '../../public/images/icons/versionControlLight.png'
-import responsiveDark from '../../public/images/icons/responsiveDark.png'
-import responsiveLight from '../../public/images/icons/responsiveLight.png'
-import uiDark from '../../public/images/icons/uiDark.png'
-import uiLight from '../../public/images/icons/uiLight.png'
+const BackendLight = '/images/icons/BackEnd-Light.png'
+const BackendDark = '/images/icons/BackEnd-Dark.png'
+const FrontendLight = '/images/icons/FrontEnd-Dark.png'
+const FrontendDark = '/images/icons/FrontEnd-Light.png'
+const databaseLight = '/images/icons/databaseManagement-Light.png'
+const databaseDark = '/images/icons/databaseManagementDark.png'
+const versionControlDark = '/images/icons/versionControlDark.png'
+const versionControlLight = '/images/icons/versionControlLight.png'
+const responsiveDark = '/images/icons/responsiveDark.png'
+const responsiveLight = '/images/icons/responsiveLight.png'
+const uiDark = '/images/icons/uiDark.png'
+const uiLight = '/images/icons/uiLight.png'
 import { IconType } from 'react-icons/lib'
 import { FaNodeJs } from "react-icons/fa";
 import {
@@ -54,7 +54,7 @@ import { TbBrandThreejs } from "react-icons/tb";
 
 export interface ServiceSkillT {
   id: number,
-  iconImg?: { light?: StaticImageData, dark?: StaticImageData },
+  iconImg?: { light?: string | StaticImageData, dark?: string | StaticImageData },
   title: string
   description: string
 }

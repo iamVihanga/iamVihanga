@@ -30,7 +30,7 @@ export default function SkillsSection({ }: Props) {
           <div className="mt-3 flex flex-col gap-y-3">
             {Certificates
               .filter(certificate => certificate.featured)
-              .map(certificate => <CertificationCard certificate={certificate} />)
+              .map(certificate => <CertificationCard key={certificate.slug} certificate={certificate} />)
             }
           </div>
 
@@ -54,7 +54,7 @@ export default function SkillsSection({ }: Props) {
             <div className="mt-3 flex items-center flex-wrap gap-3">
               {skillIcons
                 .filter(item => item.category === 'backend')
-                .map(skill => <SkillIcon icon={skill} />)
+                .map(skill => <SkillIcon key={skill.id} icon={skill} />)
               }
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function SkillsSection({ }: Props) {
             <div className="mt-3 flex items-center flex-wrap gap-3">
               {skillIcons
                 .filter(item => item.category === 'frontend')
-                .map(skill => <SkillIcon icon={skill} />)
+                .map(skill => <SkillIcon key={skill.id} icon={skill} />)
               }
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function SkillsSection({ }: Props) {
             <div className="mt-3 flex items-center flex-wrap gap-3">
               {skillIcons
                 .filter(item => item.category === 'database')
-                .map(skill => <SkillIcon icon={skill} />)
+                .map(skill => <SkillIcon key={skill.id} icon={skill} />)
               }
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function SkillsSection({ }: Props) {
             <div className="mt-3 flex items-center flex-wrap gap-3">
               {skillIcons
                 .filter(item => item.category === 'devops')
-                .map(skill => <SkillIcon icon={skill} />)
+                .map(skill => <SkillIcon key={skill.id} icon={skill} />)
               }
             </div>
           </div>
