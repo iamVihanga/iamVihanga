@@ -9,11 +9,11 @@ type Props = {}
 
 export default function Portfolio({ }: Props) {
   return (
-    <div id='portfolio' className="h-[205vh] w-full bg-neutral-100/50  dark:bg-neutral-950/30 relative antialiased overflow-hidden">
-      <div className="standard-container py-20 z-10 w-full min-h-[160vh] absolute">
+    <div id='portfolio' className="h-[150vh] sm:h-[90vw] w-full bg-neutral-100/50  dark:bg-neutral-950/30 relative antialiased overflow-hidden">
+      <div className="standard-container py-20 z-10 w-full absolute">
         {/* Header */}
         <div className="flex items-start sm:items-center justify-between flex-col sm:flex-row">
-          <h1 className='hidden sm:flex text-6xl uppercase font-black text-neutral-800 dark:text-white'>
+          <h1 className='hidden sm:block text-6xl uppercase font-black text-neutral-800 dark:text-white'>
             <span>{`HERE’S A GLIMPSE OF`}</span><br />
             <span>{`SOME EXCITING PROJECTS`}</span><br />
             <span>{`I’VE DONE`}</span><br />

@@ -52,7 +52,7 @@ export default function ProjectCard({ className, project }: Props) {
           <Link href={'#'}>
             <div className="border rounded-full border-neutral-700 dark:border-neutral-800 p-1 flex items-center ">
               <p className="flex-1 text-center text-sm font-normal text-neutral-700 dark:text-neutral-300 px-3">Preview</p>
-              <div className='p-2 rounded-full bg-black dark:bg-neutral-400 group-hover:bg-lime-400 duration-200'>
+              <div className='p-2 rounded-full bg-black dark:bg-neutral-400 group-hover:bg-limeFlucent duration-200'>
                 <ArrowUpRight size={20} className='text-white dark:text-neutral-800 group-hover:text-black ' />
               </div>
             </div>

@@ -24,4 +24,17 @@ declare global {
     designation: string;
     image: string;
   }
+
+  interface Certificate {
+    slug: string,
+    name: string,
+    link: string,
+    fileLink: string
+    thumbnail: string,
+    provider: {
+      name: string,
+      icon: string
+    },
+    featured?: boolean
+  }
 }

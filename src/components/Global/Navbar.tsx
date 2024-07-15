@@ -20,7 +20,7 @@ type Props = {
 
 export default function Navbar({ className }: Props) {
   return (
-    <header className={`w-full h-14 px-0 sm:px-28 flex flex-row justify-between bg-white/80 dark:bg-black/80 border-b border-b-black dark:border-b-white/70 backdrop-blur-md ${className}`}>
+    <header className={`w-full h-14 px-0 sm:px-28 flex flex-row justify-between bg-white/80 dark:bg-black/60 border-b border-b-black dark:border-b-white/70 backdrop-blur-md ${className}`}>
       <div className="hidden sm:flex flex-row flex-1">
         {NavLinks.map(({ id, slug, text }) => (
           <Button key={id} asChild className='text-black dark:text-white/70 dark:hover:text-white' size={'solid'} variant={'solid'}>

@@ -8,6 +8,10 @@ import Image from 'next/image'
 import ProfilePic from '../../public/images/profile.png'
 import AboutUsSection from '@/components/PageSections/Homepage/AboutUs'
 import PortfolioSection from '@/components/PageSections/Homepage/Portfolio'
+import Testimonials from '@/components/PageSections/Homepage/Testimonials'
+import SkillsSection from '@/components/PageSections/Homepage/Skills';
+import ContactSection from '@/components/PageSections/Homepage/Contact';
+import Footer from '@/components/Global/Footer';
 
 export default function Home() {
   return (
@@ -68,6 +72,18 @@ export default function Home() {
 
       {/* Section 03 - Portfolio */}
       <PortfolioSection />
+
+      {/* Section 04 - Testimonials */}
+      <Testimonials />
+
+      {/* Section 05 - Skills */}
+      <SkillsSection />
+
+      {/* Section 06 - Contact */}
+      <ContactSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
