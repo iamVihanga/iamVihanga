@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+import React, { useState } from 'react'
 import { AboutMe_Paragraphs } from '@/lib/constants';
 import { GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,10 +8,25 @@ import Image from 'next/image';
 import SocialIcon from '@/components/Global/SocialIcon';
 import Link from 'next/link';
 import { SocialsList } from '@/lib/socials';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useToast } from '@/components/ui/use-toast';
 
 type Props = {}
 
 export default function AboutUs({ }: Props) {
+  const email = "vihanga@codeville.uk";
+  const [copied, setCopied] = useState<boolean>(false);
+  const { toast } = useToast()
+
+  const handleCopy = () => {
+    setCopied(true);
+
+    toast({
+      title: "Congratulations.! Email copied to clipboard",
+      description: "Don't forget to leave me an email for me 🚀",
+    })
+  }
+
   return (
     <div id='about' className="sm:h-fit h-fit py-5 sm:py-20">
       <div className="w-full sm:py-8 py-1 standard-container grid sm:grid-cols-5 grid-cols-1 ">
@@ -28,11 +44,14 @@ export default function AboutUs({ }: Props) {
           <p className="mt-9 text-lg font-bold text-black dark:text-white">Are you willing to start your project with me ?</p>
 
           <div className="mt-4">
-            <Button
-              className="inline-flex h-12 animate-shimmer items-center justify-center rounded-none border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400/25 focus:ring-offset-1 focus:ring-offset-slate-50"
-            >
-              Copy my Email to Clipboard
-            </Button>
+            <CopyToClipboard text={email} onCopy={handleCopy}>
+              <Button
+                className="inline-flex h-12 animate-shimmer items-center justify-center rounded-none border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400/25 focus:ring-offset-1 focus:ring-offset-slate-50"
+              >
+                {copied ? "Email Copied to Clipboard" : "Copy my Email to Clipboard"}
+              </Button>
+            </CopyToClipboard>
+
             <Button asChild variant={"solid"} size={"solid"} className='hidden sm:inline-flex h-12 bg-white text-black ml-2 border border-black dark:border-white'>
               <Link href="/resume.pdf" target="_blank">
                 Download CV

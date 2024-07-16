@@ -4,6 +4,7 @@ import { inter, spaceGrotesk } from './fonts'
 import { ThemeProvider } from '@/components/ui/theme-provider'
 import Navbar from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "Vihanga Silva | Ultimate Developer Portfolio",
@@ -30,6 +31,7 @@ export default function RootLayout({
 
             <Footer />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
