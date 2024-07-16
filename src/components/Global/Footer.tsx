@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import { ArrowUpRight } from 'lucide-react'
+import Link from 'next/link'
+import { NavLinks } from '@/lib/constants'
 
 type Props = {}
 
@@ -17,16 +19,26 @@ export default function Footer({ }: Props) {
             </div>
 
             <div className="hidden sm:flex w-40 h-14">
-              <Button variant={'solid'} size={'solid'} className='flex gap-x-1 items-center bg-black dark:bg-white w-full h-full text-neutral-200 dark:text-neutral-700'>
-                Let's Talk
-                <ArrowUpRight size={17} />
+              <Button asChild variant={'solid'} size={'solid'} className='flex gap-x-1 items-center bg-black dark:bg-white w-full h-full text-neutral-200 dark:text-neutral-700'>
+                <Link href={'/contact'}>
+                  Let's Talk
+                  <ArrowUpRight size={17} />
+                </Link>
               </Button>
             </div>
           </div>
 
           <div className="border-t my-8 border-neutral-600 dark:border-neutral-300 w-full" />
 
-          <p className='sm:text-left text-center font-semibold text-xs'>{`Copyright @${new Date().getFullYear()} Vihanga Silva`}</p>
+          <div className="flex items-center justify-between">
+            <p className='sm:text-left text-center font-semibold text-xs'>{`Copyright @${new Date().getFullYear()} Vihanga Silva`}</p>
+
+            <div className="hidden sm:flex items-center gap-x-5">
+              {NavLinks.map(link => (
+                <Link key={link.id} href={link.slug} className='text-xs font-normal hover:text-limeFlucent'>{link.text}</Link>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className='z-10 absolute w-full h-[5vh] sm:h-[20vh] top-0 left-0 bg-gradient-to-b dark:from-black/60 from-white/60 dark:to-black/0 to-white/0' />

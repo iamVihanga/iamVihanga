@@ -70,7 +70,8 @@ export const portfolioProjects: Project[] = [
         designation: "",
         image: "vercel"
       }],
-    thumbnail: duberCustomerWeb
+    thumbnail: duberCustomerWeb,
+    isFeatured: true
   },
   {
     id: 2,
@@ -112,7 +113,8 @@ export const portfolioProjects: Project[] = [
         designation: "",
         image: "vercel"
       }],
-    thumbnail: duberPilotWeb
+    thumbnail: duberPilotWeb,
+    isFeatured: true
   },
   {
     id: 3,
@@ -156,7 +158,8 @@ export const portfolioProjects: Project[] = [
       designation: "",
       image: "nginx"
     }],
-    thumbnail: duberBackendServer
+    thumbnail: duberBackendServer,
+    isFeatured: true
   },
   {
     id: 4,
@@ -185,7 +188,8 @@ export const portfolioProjects: Project[] = [
       designation: "",
       image: "tailwindcss"
     }],
-    thumbnail: duberDesignSystem
+    thumbnail: duberDesignSystem,
+    isFeatured: true
   },
   {
     id: 5,
@@ -199,7 +203,8 @@ export const portfolioProjects: Project[] = [
       designation: "",
       image: "figma"
     }],
-    thumbnail: duberMobileApp
+    thumbnail: duberMobileApp,
+    isFeatured: true
   },
   {
     id: 6,
@@ -220,7 +225,8 @@ export const portfolioProjects: Project[] = [
       image: "tailwindcss"
     }
     ],
-    thumbnail: reactTailwindDashboard
+    thumbnail: reactTailwindDashboard,
+    isFeatured: true
   },
 ]
 

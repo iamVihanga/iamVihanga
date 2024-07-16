@@ -15,7 +15,8 @@ declare global {
     description: string,
     techStacks: TooltipItem[],
     previewLink: string,
-    githubLink: string
+    githubLink: string,
+    isFeatured?: boolean
   }
 
   interface TooltipItem {

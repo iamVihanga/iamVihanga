@@ -52,13 +52,13 @@ export default function Home() {
           <div className="relative mt-7 h-12">
             <div className="absolute z-40 flex items-center">
               <Button asChild size={"solid"} variant={"solid"} className='h-12 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900'>
-                <Link href={'#'} className='flex flex-row gap-x-2'>
+                <Link href={'/resume.pdf'} target='_blank' className='flex flex-row gap-x-2'>
                   Download CV
                   <ArrowDownToDot size={17} />
                 </Link>
               </Button>
               <Button asChild size={"solid"} variant={"solid"} className='h-12 bg-white dark:bg-black/50 text-black dark:text-white border border-neutral-500'>
-                <Link href={'/projects'} className='flex flex-row gap-x-2'>
+                <Link href={'#portfolio'} className='flex flex-row gap-x-2'>
                   Featured Projects
                 </Link>
               </Button>
@@ -82,8 +82,7 @@ export default function Home() {
       {/* Section 06 - Contact */}
       <ContactSection />
 
-      {/* Footer */}
-      <Footer />
+
     </div>
   );
 }

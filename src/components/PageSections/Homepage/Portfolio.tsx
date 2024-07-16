@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { portfolioProjects } from '@/lib/constants'
 import { ArrowUpRight } from 'lucide-react'
 import React from 'react'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -24,15 +25,17 @@ export default function Portfolio({ }: Props) {
             <span>{`I’VE DONE`}</span><br />
           </h1>
 
-          <Button variant={'solid'} size={'solid'} className='bg-black mt-6 sm:mt-0 flex items-center gap-x-3 dark:bg-white h-14 text-white dark:text-black'>
-            <p>See all projects</p>
-            <ArrowUpRight size={20} />
+          <Button asChild variant={'solid'} size={'solid'} className='bg-black mt-6 sm:mt-0 flex items-center gap-x-3 dark:bg-white h-14 text-white dark:text-black'>
+            <Link href='/projects'>
+              <p>See all projects</p>
+              <ArrowUpRight size={20} />
+            </Link>
           </Button>
         </div>
 
         {/* Grid */}
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {portfolioProjects.map(project => <ProjectCard project={project} key={project.id} />)}
+          {portfolioProjects.filter(project => project.isFeatured).map(project => <ProjectCard project={project} key={project.id} />)}
         </div>
       </div>
 

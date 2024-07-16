@@ -1,5 +1,5 @@
 import { IconType } from "react-icons/lib"
-import { SiDiscord, SiFacebook, SiInstagram, SiLinkedin, SiWhatsapp, SiX } from "react-icons/si"
+import { SiDiscord, SiFacebook, SiGithub, SiInstagram, SiLinkedin, SiWhatsapp, SiX } from "react-icons/si"
 
 interface SocialT {
   id: number
@@ -15,4 +15,5 @@ export const SocialsList: SocialT[] = [
   { id: 1, name: "Facebook", icon: SiFacebook, link: "https://www.facebook.com/vihangarashansilva/" },
   { id: 1, name: "Discord", icon: SiDiscord, link: "https://discord.com/users/codeville_uk_93731" },
   { id: 5, name: "Whatsapp", icon: SiWhatsapp, link: "https://wa.me/94705848028" },
+  { id: 5, name: "Github", icon: SiGithub, link: "https://github.com/iamVihanga" },
 ]

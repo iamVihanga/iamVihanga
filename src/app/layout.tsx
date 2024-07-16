@@ -3,6 +3,7 @@ import "./globals.css";
 import { inter, spaceGrotesk } from './fonts'
 import { ThemeProvider } from '@/components/ui/theme-provider'
 import Navbar from "@/components/Global/Navbar";
+import Footer from "@/components/Global/Footer";
 
 export const metadata: Metadata = {
   title: "Vihanga Silva | Ultimate Developer Portfolio",
@@ -26,6 +27,8 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen bg-white dark:bg-black relative">
             <Navbar className="fixed top-0 left-0 z-50" />
             {children}
+
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

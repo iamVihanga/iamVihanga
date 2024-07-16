@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import DuberIcon from '../../../../public/images/Duber Icon.png'
 import Image from 'next/image';
 import SocialIcon from '@/components/Global/SocialIcon';
+import Link from 'next/link';
+import { SocialsList } from '@/lib/socials';
 
 type Props = {}
 
@@ -31,8 +33,10 @@ export default function AboutUs({ }: Props) {
             >
               Copy my Email to Clipboard
             </Button>
-            <Button variant={"solid"} size={"solid"} className='hidden sm:inline-flex h-12 bg-white text-black ml-2 border border-black dark:border-white'>
-              Download CV
+            <Button asChild variant={"solid"} size={"solid"} className='hidden sm:inline-flex h-12 bg-white text-black ml-2 border border-black dark:border-white'>
+              <Link href="/resume.pdf" target="_blank">
+                Download CV
+              </Link>
             </Button>
           </div>
         </div>
@@ -74,10 +78,30 @@ export default function AboutUs({ }: Props) {
             </div>
 
             {/* Social Cards */}
-            <SocialIcon link='#' social='Github' color='blue' iconSize={32} />
-            <SocialIcon link='#' social='LinkedIn' color='blue' iconSize={32} />
-            <SocialIcon link='#' social='X' color='blue' iconSize={32} />
-            <SocialIcon link='#' social='Instagram' color='blue' iconSize={32} />
+            <SocialIcon
+              link={SocialsList.filter(social => social.name === 'Github')[0].link}
+              social='Github'
+              color='blue'
+              iconSize={32}
+            />
+            <SocialIcon
+              link={SocialsList.filter(social => social.name === 'LinkedIn')[0].link}
+              social='LinkedIn'
+              color='blue'
+              iconSize={32}
+            />
+            <SocialIcon
+              link={SocialsList.filter(social => social.name === 'Twitter / X')[0].link}
+              social='X'
+              color='blue'
+              iconSize={32}
+            />
+            <SocialIcon
+              link={SocialsList.filter(social => social.name === 'Instagram')[0].link}
+              social='Instagram'
+              color='blue'
+              iconSize={32}
+            />
 
           </div>
         </div>

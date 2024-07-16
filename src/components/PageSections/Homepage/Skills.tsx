@@ -7,6 +7,7 @@ import CertificationCard from '@/components/Global/CertificationCard'
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight } from 'lucide-react'
 import SkillIcon from '@/components/Global/SkillIcon'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -35,9 +36,11 @@ export default function SkillsSection({ }: Props) {
           </div>
 
           <div className="h-14 mt-6">
-            <Button variant={"solid"} size={"solid"} className='bg-white group dark:bg-neutral-950 uppercase flex items-center gap-x-3'>
-              {`See All Certifications`}
-              <ArrowUpRight size={20} />
+            <Button asChild variant={"solid"} size={"solid"} className='bg-white group dark:bg-neutral-950 uppercase '>
+              <Link href={'/skills'} className='flex items-center gap-x-3'>
+                {`See All Certifications`}
+                <ArrowUpRight size={20} />
+              </Link>
             </Button>
           </div>
         </div>

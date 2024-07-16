@@ -45,7 +45,7 @@ export default function Navbar({ className }: Props) {
 
         {/* Download CV Button */}
         <Button asChild size={"solid"} variant={"solid"} className='hidden sm:flex border-r border-black dark:border-white hover:bg-primary-foreground/90 dark:hover:bg-primary/5'>
-          <Link href={'#'} className='flex flex-row gap-x-2'>
+          <Link href={'/resume.pdf'} target='_blank' className='flex flex-row gap-x-2'>
             Download CV
             <ArrowDownToDot size={17} className='text-black dark:text-white' />
           </Link>
@@ -53,7 +53,7 @@ export default function Navbar({ className }: Props) {
 
         {/* Lets talk */}
         <Button asChild size={"solid"} className='bg-black dark:bg-white text-white dark:text-black'>
-          <Link href={'#'} className='flex flex-row gap-x-2'>
+          <Link href={'/contact'} className='flex flex-row gap-x-2'>
             Let's Talk
             <ArrowUpRight size={17} />
           </Link>
