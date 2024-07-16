@@ -37,7 +37,7 @@ export default function SkillsSection({ }: Props) {
 
           <div className="h-14 mt-6">
             <Button asChild variant={"solid"} size={"solid"} className='bg-white group dark:bg-neutral-950 uppercase '>
-              <Link href={'/skills'} className='flex items-center gap-x-3'>
+              <Link href={'/certificates'} className='flex items-center gap-x-3'>
                 {`See All Certifications`}
                 <ArrowUpRight size={20} />
               </Link>
