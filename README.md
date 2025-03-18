@@ -133,7 +133,7 @@ Brief description of the project, highlighting the problem it solves and the tec
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamVihanga&layout=compact&theme=radical" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamVihanga&layout=compact&theme=radical&hide=html,css" alt="Top Languages" />
 </p>
 
 ## 🔥 Weekly Coding Stats
