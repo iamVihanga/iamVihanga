@@ -26,7 +26,7 @@ I am a passionate B.Tech Software Technology student at UOVT Sri Lanka, driven b
 
 ## 📬 Get in Touch
 
-- Connect with me on [Twitter](https://twitter.com/introvertedbot)
+- Connect with me on [Linkedin](https://www.linkedin.com/in/iamvihangasilva)
 - Read more of my articles on [theenthusiast.dev](https://theenthusiast.dev)
 
 Thanks for stopping by! Let's connect and explore the fascinating world of technology together. 🚀
