@@ -1,4 +1,4 @@
-<p align="center"><a href="https://vihanga.live"><img width="100%" height="100%" alt="Hello, I'm Vihanga Silva !" src="./public/images/readme-banner.png" /></a></p>
+<p align="center"><a href="https://vihanga.live"><img width="100%" height="100%" alt="Hello, I'm Vihanga Silva !" src="./public/images/git-readme-banner.png" /></a></p>
 
 <p align="center">
   <a href="https://vihanga.live"><img src="https://img.shields.io/badge/Website-vihanga.live-f5f56e?style=for-the-badge&logo=google-chrome&logoColor=f5f56e&labelColor=040e0a" alt="Website"/></a>
