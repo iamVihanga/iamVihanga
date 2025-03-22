@@ -8,40 +8,84 @@
 
 ---
 
-I'm a passionate Full-Stack Developer specializing in Next.js and Node.js. I love building performant, scalable web applications with modern technologies.
+# 👩‍💻 GIT:WHOAMI
 
-## 💻 Tech Stack
+#### I'm Vihanga R. De Silva, A <b>Full-Stack Developer</b> specializing TypeScript based Frameworks such as <font color="pink">NextJS</font>, <font color="lightgreen">NodeJS</font>, <font color="skyblue">React-Native</font> & <font color="purple">Deno</font>. Im working on building performant, scalable Web & Mobile applications with cutting edge technologies and Well-Managed software architectures.
 
-### Frontend
+<table border="1">
+<tr>
+
+<td><a href="https://github.com/iamVihanga"><img align="center" src="https://github-readme-stats.vercel.app/api?username=iamVihanga&show_icons=true&include_all_commits=true&theme=merko&hide_border=true" alt="Vihanga's github stats" /></a></td>
+
+<td><a href="https://github.com/iamVihanga"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=iamVihanga&theme=merko" /></a></td>
+<tr>
+</table>
+
+---
+
+# 💻 Tech Stack
+
+<table>
+<tr>
+    <th>Frontend</th>
+    <th>Backend</th>
+</tr>
+
+  <tr>
+    <td>
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![ShadCN](https://img.shields.io/badge/ShadCN-000000?style=for-the-badge&logo=shadcn-ui&logoColor=white)
 ![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 
-### Backend
+  </td>
+    <td>
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![HonoJS](https://img.shields.io/badge/Hono-FF6C37?style=for-the-badge&logo=hono&logoColor=white)
+![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=Bun&logoColor=white)
+![Deno](https://img.shields.io/badge/Deno-E10098?style=for-the-badge&logo=deno&logoColor=white)
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST_API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-### Database
+</td>
+
+  </tr>
+<table>
+
+<table>
+<tr>
+    <th>Database</th>
+    <th>Cloud & DevOps</th>
+</tr>
+
+  <tr>
+    <td>
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![DrizzleORM](https://img.shields.io/badge/Drizzle-47A248?style=for-the-badge&logo=drizzle&logoColor=white)
 
-### Cloud & DevOps
+  </td>
+    <td>
 
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+</td>
+
+  </tr>
+<table>
 
 ### Other Tools
 
@@ -81,20 +125,6 @@ Brief description of the project, highlighting the problem it solves and the tec
 - **Tech Stack**: React, Redux, Firebase, Material UI
 - **Features**: User management, Dashboard, Analytics
 - **[Live Demo](https://project3-demo.com)** | **[GitHub Repo](https://github.com/iamVihanga/project3)**
-
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=iamVihanga&show_icons=true&theme=radical" alt="GitHub Stats" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=iamVihanga&theme=radical" alt="GitHub Streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamVihanga&layout=compact&theme=radical&hide=html,css" alt="Top Languages" />
-</p>
 
 ## 🔥 Weekly Coding Stats
 
