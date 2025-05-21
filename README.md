@@ -82,59 +82,6 @@
   </tr>
 <table>
 
-### Other Tools
-
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
-
-## 🚀 Featured Projects
-
-### Project Name 1
-
-![Project Badge](https://img.shields.io/badge/NextJS-TypeScript-blue)
-
-Brief description of the project, highlighting the problem it solves and the tech stack used.
-
-- **Tech Stack**: Next.js, TypeScript, TailwindCSS, MongoDB
-- **Features**: Authentication, Real-time updates, Responsive design
-- **[Live Demo](https://project1-demo.com)** | **[GitHub Repo](https://github.com/iamVihanga/project1)**
-
-### Project Name 2
-
-![Project Badge](https://img.shields.io/badge/NodeJS-Express-green)
-
-Brief description of the project, highlighting the problem it solves and the tech stack used.
-
-- **Tech Stack**: Node.js, Express, PostgreSQL, Docker
-- **Features**: RESTful API, Authentication, Data visualization
-- **[Live Demo](https://project2-demo.com)** | **[GitHub Repo](https://github.com/iamVihanga/project2)**
-
-### Project Name 3
-
-![Project Badge](https://img.shields.io/badge/React-Redux-purple)
-
-Brief description of the project, highlighting the problem it solves and the tech stack used.
-
-- **Tech Stack**: React, Redux, Firebase, Material UI
-- **Features**: User management, Dashboard, Analytics
-- **[Live Demo](https://project3-demo.com)** | **[GitHub Repo](https://github.com/iamVihanga/project3)**
-
-## 🔥 Weekly Coding Stats
-
-<!--START_SECTION:waka-->
-
-```text
-TypeScript   12 hrs 45 mins  ███████████▓░░░░░░░░░░░   47.32 %
-JavaScript   8 hrs 10 mins   ███████▒░░░░░░░░░░░░░░░   30.42 %
-SCSS         2 hrs 30 mins   ██▒░░░░░░░░░░░░░░░░░░░░   09.35 %
-JSON         1 hr 15 mins    █▒░░░░░░░░░░░░░░░░░░░░░   04.68 %
-HTML         1 hr 5 mins     █░░░░░░░░░░░░░░░░░░░░░░   04.05 %
-```
-
-<!--END_SECTION:waka-->
-
 ## 📫 How to reach me
 
 - 📧 Email: contact@vihanga.live
