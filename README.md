@@ -1,5 +1,7 @@
 <p align="center"><a href="https://vihanga.live"><img width="100%" height="100%" alt="Hello, I'm Vihanga Silva !" src="./public/images/git-readme-banner.png" /></a></p>
 
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=iamVihanga&theme=merko&hide_border=true&card_width=1200)](https://git.io/streak-stats)
+
 <p align="center">
   <a href="https://vihanga.live"><img src="https://img.shields.io/badge/Website-vihanga.live-f5f56e?style=for-the-badge&logo=google-chrome&logoColor=f5f56e&labelColor=040e0a" alt="Website"/></a>
   <a href="https://www.linkedin.com/in/iamvihangasilva/"><img src="https://img.shields.io/badge/LinkedIn-iamvihangasilva-f5f56e?style=for-the-badge&logo=linkedin&logoColor=f5f56e&labelColor=040e0a" alt="LinkedIn"/></a>
@@ -12,8 +14,7 @@
 
 #### I'm Vihanga R. De Silva, A <b>Full-Stack Developer</b> specializing TypeScript based Frameworks such as <font color="pink">NextJS</font>, <font color="lightgreen">NodeJS</font>, <font color="skyblue">React-Native</font> & <font color="purple">Deno</font>. Im working on building performant, scalable Web & Mobile applications with cutting edge technologies and Well-Managed software architectures.
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=iamVihanga&theme=transparent&hide_border=true&card_width=)](https://git.io/streak-stats)
----
+<img src="https://github-profile-trophy.vercel.app/?username=iamVihanga&theme=juicyfresh&no-bg=true&row=1" />
 
 # 💻 Tech Stack
 
