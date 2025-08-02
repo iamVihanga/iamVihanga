@@ -12,10 +12,7 @@
 
 #### I'm Vihanga R. De Silva, A <b>Full-Stack Developer</b> specializing TypeScript based Frameworks such as <font color="pink">NextJS</font>, <font color="lightgreen">NodeJS</font>, <font color="skyblue">React-Native</font> & <font color="purple">Deno</font>. Im working on building performant, scalable Web & Mobile applications with cutting edge technologies and Well-Managed software architectures.
 
-| My Github Statistics                                                                                          | Profile Overview                                                                                   |
-|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| ![Vihanga's GitHub Stats](https://github-readme-stats.vercel.app/api?username=iamVihanga&show_icons=true&include_all_commits=true&theme=merko&hide_border=true) | ![Vihanga's Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=iamVihanga&theme=merko) |
-
+![Vihanga's Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=iamVihanga&theme=merko)
 ---
 
 # 💻 Tech Stack
