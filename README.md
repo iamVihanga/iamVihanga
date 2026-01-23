@@ -10,9 +10,8 @@
 
 # 👩‍💻 GIT:WHOAMI
 
-#### I'm Vihanga R. De Silva, A <b>Full-Stack Developer</b> specializing TypeScript based Frameworks such as <font color="pink">NextJS</font>, <font color="lightgreen">NodeJS</font>, <font color="skyblue">React-Native</font> & <font color="purple">Deno</font>. Im working on building performant, scalable Web & Mobile applications with cutting edge technologies and Well-Managed software architectures.
-
-<img src="https://github-profile-trophy.vercel.app/?username=iamVihanga&theme=juicyfresh&no-bg=true&row=1" />
+#### I'm Vihanga R. De Silva, (A Full Stack Developer, Blackchain & AI Agentic System Development Enthusiast)
+Primarily working with NodeJS/TypeScript Eco-System's Frameworks such as NextJS / TanStack Start / Astro / NestJS / React Native / Expo / PayloadCMS etc. and Im faviorite tech stack is Cloudflare serverless stack such as Cloudflare Workers, AI, D1, Containers, Agents etc. And also Im very excited to build performant boilerplates for full-stack application developments. I use "Bun" as major framework for performance first applications such as Backend servers, Tooling and more...
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=iamVihanga&theme=merko&hide_border=true&card_width=1200)](https://git.io/streak-stats)
 
@@ -24,6 +23,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![ShadCN](https://img.shields.io/badge/ShadCN-000000?style=for-the-badge&logo=shadcn-ui&logoColor=white)
+![Workers](https://img.shields.io/badge/Workers-ba5b16?style=for-the-badge&logo=cloudflare-workers&logoColor=white)
+![PayloadCMS](https://img.shields.io/badge/PayloadCMS-ffffff?style=for-the-badge&logo=payload-cms&logoColor=black)
 ![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -42,6 +43,7 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
 
 ## 📫 How to reach me
 
