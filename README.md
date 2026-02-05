@@ -31,6 +31,7 @@ Primarily working with NodeJS/TypeScript Eco-System's Frameworks such as NextJS 
 ![HonoJS](https://img.shields.io/badge/Hono-FF6C37?style=for-the-badge&logo=hono&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=Bun&logoColor=white)
 ![Deno](https://img.shields.io/badge/Deno-E10098?style=for-the-badge&logo=deno&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-231a38?style=for-the-badge&logo=astro&logoColor=e438ff)
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST_API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
