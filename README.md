@@ -11,6 +11,7 @@
 # 👩‍💻 GIT:WHOAMI
 
 #### I'm Vihanga R. De Silva, (A Full Stack Developer, Blackchain & AI Agentic System Development Enthusiast)
+
 Primarily working with NodeJS/TypeScript Eco-System's Frameworks such as NextJS / TanStack Start / Astro / NestJS / React Native / Expo / PayloadCMS etc. and Im faviorite tech stack is Cloudflare serverless stack such as Cloudflare Workers, AI, D1, Containers, Agents etc. And also Im very excited to build performant boilerplates for full-stack application developments. I use "Bun" as major framework for performance first applications such as Backend servers, Tooling and more...
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=iamVihanga&theme=merko&hide_border=true&card_width=1200)](https://git.io/streak-stats)
@@ -45,6 +46,25 @@ Primarily working with NodeJS/TypeScript Eco-System's Frameworks such as NextJS 
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+<br />
+
+# 📚 Learning & Education
+
+<table style="background-color: rgba(255, 255, 255, 0.1); width: 100%;">
+  <tr>
+    <td width="100px" align="center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Universityof-colombo-logo-2019.png" alt="University Logo" width="80px"/>
+    </td>
+    <td>
+      <strong>Bachelor of Information Technology</strong><br/>
+      School of Computing - University of Colombo (Sri Lanka)<br/>
+      <em>2025 - Current</em><br/>
+      <code>Pursuing</code>
+    </td>
+  </tr>
+</table>
+
+<br />
 
 ## 📫 How to reach me
 
