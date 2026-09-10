@@ -1,5 +1,5 @@
 import type { NumberField } from 'payload'
-import type { SerializedEditorState } from 'lexical'
+import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import { convertLexicalToPlaintext } from '@payloadcms/richtext-lexical/plaintext'
 
 const WORDS_PER_MINUTE = 200

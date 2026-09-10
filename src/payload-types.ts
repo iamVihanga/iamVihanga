@@ -137,12 +137,12 @@ export interface Config {
   };
   fallbackLocale: null;
   globals: {
-    'site-settings': SiteSetting;
     contact: Contact;
+    'site-settings': SiteSetting;
   };
   globalsSelect: {
-    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     contact: ContactSelect<false> | ContactSelect<true>;
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
   };
   locale: null;
   widgets: {
@@ -1129,39 +1129,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings".
- */
-export interface SiteSetting {
-  id: number;
-  siteName: string;
-  /**
-   * One line under your name, e.g. Full-stack and AI agent developer.
-   */
-  tagline?: string | null;
-  /**
-   * A paragraph for the hero or footer.
-   */
-  shortBio?: string | null;
-  logo?: (number | null) | Media;
-  /**
-   * Optional variant for dark backgrounds.
-   */
-  logoDark?: (number | null) | Media;
-  favicon?: (number | null) | Media;
-  defaultOgImage?: (number | null) | Media;
-  /**
-   * Downloadable CV, typically a PDF.
-   */
-  resume?: (number | null) | Media;
-  /**
-   * Footer copyright line.
-   */
-  copyright?: string | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact".
  */
 export interface Contact {
@@ -1217,21 +1184,36 @@ export interface Contact {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings_select".
+ * via the `definition` "site-settings".
  */
-export interface SiteSettingsSelect<T extends boolean = true> {
-  siteName?: T;
-  tagline?: T;
-  shortBio?: T;
-  logo?: T;
-  logoDark?: T;
-  favicon?: T;
-  defaultOgImage?: T;
-  resume?: T;
-  copyright?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+export interface SiteSetting {
+  id: number;
+  siteName: string;
+  /**
+   * One line under your name, e.g. Full-stack and AI agent developer.
+   */
+  tagline?: string | null;
+  /**
+   * A paragraph for the hero or footer.
+   */
+  shortBio?: string | null;
+  logo?: (number | null) | Media;
+  /**
+   * Optional variant for dark backgrounds.
+   */
+  logoDark?: (number | null) | Media;
+  favicon?: (number | null) | Media;
+  defaultOgImage?: (number | null) | Media;
+  /**
+   * Downloadable CV, typically a PDF.
+   */
+  resume?: (number | null) | Media;
+  /**
+   * Footer copyright line.
+   */
+  copyright?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1265,6 +1247,24 @@ export interface ContactSelect<T extends boolean = true> {
         label?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  tagline?: T;
+  shortBio?: T;
+  logo?: T;
+  logoDark?: T;
+  favicon?: T;
+  defaultOgImage?: T;
+  resume?: T;
+  copyright?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

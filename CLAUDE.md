@@ -10,29 +10,30 @@ This project vendors the Payload CMS skill. Start with `.claude/skills/payload/S
 
 ## Commands
 
-The lockfile is `package-lock.json` (npm), but `package.json` declares a pnpm engine and two scripts shell out to pnpm: `test` runs `pnpm run test:int && pnpm run test:e2e`, and the Playwright `webServer` starts the app with `pnpm dev`. Run the individual test scripts with npm, or install pnpm before running `test` / e2e.
+The project uses **pnpm** and is pinned to it via the `packageManager` field, so `npm install` and `yarn` are refused by corepack. The lockfile is `pnpm-lock.yaml`. Native modules that are allowed to run install scripts are whitelisted under `pnpm.onlyBuiltDependencies` in `package.json`; `sharp` must be listed there or image processing breaks.
 
 ```bash
-npm run dev              # dev server on :3000; admin at /admin, frontend at /
-npm run devsafe          # same, after deleting .next (use when the dev build goes stale)
-npm run build            # next build (raises heap to 8 GB)
-npm run lint             # eslint
-npm run generate:types   # regenerate src/payload-types.ts from the Payload config
-npm run generate:importmap  # regenerate src/app/(payload)/admin/importMap.js
-npm run payload -- <cmd> # any Payload CLI command (migrate, generate:db-schema, ...)
+pnpm dev                 # dev server on :3000; admin at /admin, frontend at /
+pnpm devsafe             # same, after deleting .next (use when the dev build goes stale)
+pnpm build               # next build (raises heap to 8 GB)
+pnpm lint                # eslint
+pnpm generate:types      # regenerate src/payload-types.ts from the Payload config
+pnpm generate:importmap  # regenerate src/app/(payload)/admin/importMap.js
+pnpm payload <cmd>       # any Payload CLI command (migrate, generate:db-schema, ...)
 ```
 
 Tests:
 
 ```bash
-npm run test:int         # vitest, tests/int/**/*.int.spec.ts
-npm run test:e2e         # playwright, tests/e2e/ (auto-starts the dev server)
+pnpm test                # both suites: test:int then test:e2e
+pnpm test:int            # vitest, tests/int/**/*.int.spec.ts
+pnpm test:e2e            # playwright, tests/e2e/ (auto-starts the dev server)
 
 # single integration test
-npx cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts -t 'fetches users'
+pnpm exec cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts -t 'fetches users'
 
 # single e2e test
-npx cross-env NODE_OPTIONS="--no-deprecation --import=tsx/esm" playwright test --config=playwright.config.ts tests/e2e/admin.e2e.spec.ts -g 'can navigate to dashboard'
+pnpm exec cross-env NODE_OPTIONS="--no-deprecation --import=tsx/esm" playwright test --config=playwright.config.ts tests/e2e/admin.e2e.spec.ts -g 'can navigate to dashboard'
 ```
 
 Both suites run against the database in `.env`, not a fixture database. The integration spec queries the real `users` collection, and the admin e2e suite creates and deletes a `dev@payloadcms.com` user in it. Do not point `.env` at production while testing.
