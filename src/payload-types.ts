@@ -67,6 +67,16 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    projects: Project;
+    journal: Journal;
+    testimonials: Testimonial;
+    skills: Skill;
+    technologies: Technology;
+    'tech-stacks': TechStack;
+    'project-categories': ProjectCategory;
+    'journal-categories': JournalCategory;
+    series: Series;
+    clients: Client;
     users: User;
     media: Media;
     'payload-kv': PayloadKv;
@@ -74,8 +84,47 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: {};
+  collectionsJoins: {
+    skills: {
+      technologies: 'technologies';
+      stacks: 'tech-stacks';
+      projects: 'projects';
+      posts: 'journal';
+    };
+    technologies: {
+      stacks: 'tech-stacks';
+      projects: 'projects';
+      posts: 'journal';
+    };
+    'tech-stacks': {
+      projects: 'projects';
+    };
+    'project-categories': {
+      projects: 'projects';
+    };
+    'journal-categories': {
+      posts: 'journal';
+    };
+    series: {
+      posts: 'journal';
+    };
+    clients: {
+      projects: 'projects';
+      agencyProjects: 'projects';
+      testimonials: 'testimonials';
+    };
+  };
   collectionsSelect: {
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    journal: JournalSelect<false> | JournalSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
+    skills: SkillsSelect<false> | SkillsSelect<true>;
+    technologies: TechnologiesSelect<false> | TechnologiesSelect<true>;
+    'tech-stacks': TechStacksSelect<false> | TechStacksSelect<true>;
+    'project-categories': ProjectCategoriesSelect<false> | ProjectCategoriesSelect<true>;
+    'journal-categories': JournalCategoriesSelect<false> | JournalCategoriesSelect<true>;
+    series: SeriesSelect<false> | SeriesSelect<true>;
+    clients: ClientsSelect<false> | ClientsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -87,8 +136,14 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'site-settings': SiteSetting;
+    contact: Contact;
+  };
+  globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -119,10 +174,352 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  _order?: string | null;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * One or two sentences, shown on project cards.
+   */
+  excerpt: string;
+  /**
+   * The full case study.
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  coverImage: number | Media;
+  /**
+   * Screenshots and diagrams. Captions come from each media item.
+   */
+  gallery?: (number | Media)[] | null;
+  technologies?: (number | Technology)[] | null;
+  /**
+   * Curated stacks this project is built on.
+   */
+  stacks?: (number | TechStack)[] | null;
+  /**
+   * Capability areas this project demonstrates. Set editorially, not derived from the technologies above.
+   */
+  skills?: (number | Skill)[] | null;
+  /**
+   * Your role, e.g. Lead full-stack developer.
+   */
+  role?: string | null;
+  teamSize?: number | null;
+  links?: {
+    liveUrl?: string | null;
+    repoUrl?: string | null;
+    caseStudyUrl?: string | null;
+  };
+  projectType: 'personal' | 'agency' | 'client' | 'collaboration';
+  /**
+   * Who the work was delivered for.
+   */
+  client?: (number | null) | Client;
+  /**
+   * The agency this was delivered through, e.g. Codeville.
+   */
+  agency?: (number | null) | Client;
+  categories?: (number | ProjectCategory)[] | null;
+  /**
+   * Delivery stage. Separate from the draft/published state.
+   */
+  stage?: ('concept' | 'in-progress' | 'completed' | 'maintained' | 'archived') | null;
+  startDate?: string | null;
+  completedDate?: string | null;
+  featured?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  alt: string;
+  /**
+   * Shown under the image in project galleries.
+   */
+  caption?: string | null;
+  /**
+   * Attribution, if the asset is not yours.
+   */
+  credit?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    hero?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    og?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "technologies".
+ */
+export interface Technology {
+  id: number;
+  _order?: string | null;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * Short summary shown on listing pages and cards.
+   */
+  description?: string | null;
+  /**
+   * Logo or icon. SVG is preferred.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * Brand color as a hex value, e.g. #61DAFB.
+   */
+  color?: string | null;
+  /**
+   * Capability areas this technology belongs to.
+   */
+  skills?: (number | Skill)[] | null;
+  /**
+   * Official site or documentation URL.
+   */
+  website?: string | null;
+  stacks?: {
+    docs?: (number | TechStack)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  projects?: {
+    docs?: (number | Project)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  posts?: {
+    docs?: (number | Journal)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills".
+ */
+export interface Skill {
+  id: number;
+  _order?: string | null;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * Short summary shown on listing pages and cards.
+   */
+  description?: string | null;
+  /**
+   * Logo or icon. SVG is preferred.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * Brand color as a hex value, e.g. #61DAFB.
+   */
+  color?: string | null;
+  technologies?: {
+    docs?: (number | Technology)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  stacks?: {
+    docs?: (number | TechStack)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  projects?: {
+    docs?: (number | Project)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  posts?: {
+    docs?: (number | Journal)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tech-stacks".
+ */
+export interface TechStack {
+  id: number;
+  _order?: string | null;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * Short summary shown on listing pages and cards.
+   */
+  description?: string | null;
+  /**
+   * Logo or icon. SVG is preferred.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * Brand color as a hex value, e.g. #61DAFB.
+   */
+  color?: string | null;
+  /**
+   * The technologies that make up this stack.
+   */
+  technologies: (number | Technology)[];
+  /**
+   * Capability areas this stack covers.
+   */
+  skills?: (number | Skill)[] | null;
+  projects?: {
+    docs?: (number | Project)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journal".
+ */
+export interface Journal {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * One or two sentences, shown on post cards and previews.
+   */
+  excerpt: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  heroImage?: (number | null) | Media;
+  /**
+   * Projects this post is about.
+   */
+  relatedProjects?: (number | Project)[] | null;
+  skills?: (number | Skill)[] | null;
+  technologies?: (number | Technology)[] | null;
+  author?: (number | null) | User;
+  publishedAt?: string | null;
+  categories?: (number | JournalCategory)[] | null;
+  series?: (number | null) | Series;
+  /**
+   * Position within the series.
+   */
+  seriesOrder?: number | null;
+  /**
+   * Estimated minutes to read. Recalculated on every read.
+   */
+  readingTime?: number | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
   id: number;
+  name?: string | null;
+  jobTitle?: string | null;
+  avatar?: (number | null) | Media;
+  /**
+   * Short author bio for journal post bylines.
+   */
+  bio?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -144,22 +541,147 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
+ * via the `definition` "journal-categories".
  */
-export interface Media {
+export interface JournalCategory {
   id: number;
-  alt: string;
+  _order?: string | null;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * Short summary shown on listing pages and cards.
+   */
+  description?: string | null;
+  /**
+   * Logo or icon. SVG is preferred.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * Brand color as a hex value, e.g. #61DAFB.
+   */
+  color?: string | null;
+  posts?: {
+    docs?: (number | Journal)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
   updatedAt: string;
   createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "series".
+ */
+export interface Series {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  description?: string | null;
+  coverImage?: (number | null) | Media;
+  posts?: {
+    docs?: (number | Journal)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients".
+ */
+export interface Client {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  description?: string | null;
+  logo?: (number | null) | Media;
+  kind: 'client' | 'agency' | 'partner';
+  industry?: string | null;
+  website?: string | null;
+  projects?: {
+    docs?: (number | Project)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  agencyProjects?: {
+    docs?: (number | Project)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  testimonials?: {
+    docs?: (number | Testimonial)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: number;
+  _order?: string | null;
+  quote: string;
+  authorName: string;
+  /**
+   * Job title, e.g. CTO at ACME.
+   */
+  authorRole?: string | null;
+  authorAvatar?: (number | null) | Media;
+  client?: (number | null) | Client;
+  project?: (number | null) | Project;
+  featured?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-categories".
+ */
+export interface ProjectCategory {
+  id: number;
+  _order?: string | null;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * Short summary shown on listing pages and cards.
+   */
+  description?: string | null;
+  /**
+   * Logo or icon. SVG is preferred.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * Brand color as a hex value, e.g. #61DAFB.
+   */
+  color?: string | null;
+  projects?: {
+    docs?: (number | Project)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -185,6 +707,46 @@ export interface PayloadKv {
 export interface PayloadLockedDocument {
   id: number;
   document?:
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'journal';
+        value: number | Journal;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: number | Testimonial;
+      } | null)
+    | ({
+        relationTo: 'skills';
+        value: number | Skill;
+      } | null)
+    | ({
+        relationTo: 'technologies';
+        value: number | Technology;
+      } | null)
+    | ({
+        relationTo: 'tech-stacks';
+        value: number | TechStack;
+      } | null)
+    | ({
+        relationTo: 'project-categories';
+        value: number | ProjectCategory;
+      } | null)
+    | ({
+        relationTo: 'journal-categories';
+        value: number | JournalCategory;
+      } | null)
+    | ({
+        relationTo: 'series';
+        value: number | Series;
+      } | null)
+    | ({
+        relationTo: 'clients';
+        value: number | Client;
+      } | null)
     | ({
         relationTo: 'users';
         value: number | User;
@@ -237,9 +799,213 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  excerpt?: T;
+  content?: T;
+  coverImage?: T;
+  gallery?: T;
+  technologies?: T;
+  stacks?: T;
+  skills?: T;
+  role?: T;
+  teamSize?: T;
+  links?:
+    | T
+    | {
+        liveUrl?: T;
+        repoUrl?: T;
+        caseStudyUrl?: T;
+      };
+  projectType?: T;
+  client?: T;
+  agency?: T;
+  categories?: T;
+  stage?: T;
+  startDate?: T;
+  completedDate?: T;
+  featured?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journal_select".
+ */
+export interface JournalSelect<T extends boolean = true> {
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  excerpt?: T;
+  content?: T;
+  heroImage?: T;
+  relatedProjects?: T;
+  skills?: T;
+  technologies?: T;
+  author?: T;
+  publishedAt?: T;
+  categories?: T;
+  series?: T;
+  seriesOrder?: T;
+  readingTime?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  _order?: T;
+  quote?: T;
+  authorName?: T;
+  authorRole?: T;
+  authorAvatar?: T;
+  client?: T;
+  project?: T;
+  featured?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills_select".
+ */
+export interface SkillsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  icon?: T;
+  color?: T;
+  technologies?: T;
+  stacks?: T;
+  projects?: T;
+  posts?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "technologies_select".
+ */
+export interface TechnologiesSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  icon?: T;
+  color?: T;
+  skills?: T;
+  website?: T;
+  stacks?: T;
+  projects?: T;
+  posts?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tech-stacks_select".
+ */
+export interface TechStacksSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  icon?: T;
+  color?: T;
+  technologies?: T;
+  skills?: T;
+  projects?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-categories_select".
+ */
+export interface ProjectCategoriesSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  icon?: T;
+  color?: T;
+  projects?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journal-categories_select".
+ */
+export interface JournalCategoriesSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  icon?: T;
+  color?: T;
+  posts?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "series_select".
+ */
+export interface SeriesSelect<T extends boolean = true> {
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  coverImage?: T;
+  posts?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients_select".
+ */
+export interface ClientsSelect<T extends boolean = true> {
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  description?: T;
+  logo?: T;
+  kind?: T;
+  industry?: T;
+  website?: T;
+  projects?: T;
+  agencyProjects?: T;
+  testimonials?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  jobTitle?: T;
+  avatar?: T;
+  bio?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -263,6 +1029,8 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  caption?: T;
+  credit?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -274,6 +1042,50 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        hero?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        og?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -314,6 +1126,148 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  siteName: string;
+  /**
+   * One line under your name, e.g. Full-stack and AI agent developer.
+   */
+  tagline?: string | null;
+  /**
+   * A paragraph for the hero or footer.
+   */
+  shortBio?: string | null;
+  logo?: (number | null) | Media;
+  /**
+   * Optional variant for dark backgrounds.
+   */
+  logoDark?: (number | null) | Media;
+  favicon?: (number | null) | Media;
+  defaultOgImage?: (number | null) | Media;
+  /**
+   * Downloadable CV, typically a PDF.
+   */
+  resume?: (number | null) | Media;
+  /**
+   * Footer copyright line.
+   */
+  copyright?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: number;
+  email: string;
+  phone?: string | null;
+  availability?: ('available' | 'open-to-work' | 'booked') | null;
+  /**
+   * e.g. Booking from March 2026.
+   */
+  availabilityNote?: string | null;
+  /**
+   * Calendly or similar scheduling link.
+   */
+  bookingUrl?: string | null;
+  addresses?:
+    | {
+        /**
+         * e.g. Head office, Home studio.
+         */
+        label?: string | null;
+        line1: string;
+        line2?: string | null;
+        city?: string | null;
+        state?: string | null;
+        postalCode?: string | null;
+        country?: string | null;
+        mapUrl?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Drag rows to set the display order.
+   */
+  socials?:
+    | {
+        platform:
+          'github' | 'linkedin' | 'x' | 'youtube' | 'instagram' | 'dribbble' | 'medium' | 'devto' | 'discord' | 'other';
+        url: string;
+        /**
+         * e.g. @iamVihanga
+         */
+        handle?: string | null;
+        /**
+         * Override the platform name in the UI.
+         */
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  tagline?: T;
+  shortBio?: T;
+  logo?: T;
+  logoDark?: T;
+  favicon?: T;
+  defaultOgImage?: T;
+  resume?: T;
+  copyright?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
+  email?: T;
+  phone?: T;
+  availability?: T;
+  availabilityNote?: T;
+  bookingUrl?: T;
+  addresses?:
+    | T
+    | {
+        label?: T;
+        line1?: T;
+        line2?: T;
+        city?: T;
+        state?: T;
+        postalCode?: T;
+        country?: T;
+        mapUrl?: T;
+        id?: T;
+      };
+  socials?:
+    | T
+    | {
+        platform?: T;
+        url?: T;
+        handle?: T;
+        label?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
